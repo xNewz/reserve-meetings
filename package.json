@@ -1,0 +1,16 @@
+{
+  "name": "reserve-meetings",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/xNewz/reserve-meetings.git",
+  "author": "Pargorn Ruasijan <pargornruasijan@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start:frontend": "cd frontend && yarn serve",
+    "start:backend": "cd backend && yarn dev",
+    "start": "concurrently \"yarn start:frontend\" \"yarn start:backend\""
+  },
+  "dependencies": {
+    "concurrently": "^7.4.0"
+  }
+}
