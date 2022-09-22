@@ -8,6 +8,16 @@ const {
 const server = express();
 const PORT = 3000;
 
+const connect = require("./configs/database");
+
+connect.query('show tables', (err, result) => {
+    if (err) {
+        console.log(err);
+    } else {
+        console.log(result);
+    }
+});
+
 // Set up the session
 server.use(expressSession({
     secret: 'lorem ipsum',
