@@ -6,7 +6,6 @@ const {
     validationResult
 } = require('express-validator');
 const server = express();
-const router = require('./routes');
 const PORT = 3000;
 
 const connect = require("./configs/database");
@@ -33,8 +32,11 @@ server.use(bodyParser.urlencoded({
 }));
 server.use(bodyParser.json());
 
+// Middleware
+server.use(require('./configs/middleware'));
+
 // Call the router
-server.use('/api', router);
+server.use('/api', require('./routes'));
 
 server.get('*', (req, res) => {
     res.end(`<h1>Server is started</h1>`);
