@@ -1,0 +1,46 @@
+@import url("https://fonts.googleapis.com/css?family=Kanit:300,400,600");
+
+html,
+body {
+  font-family: "Kanit", sans-serif;
+}
+
+body {
+  background-color: #eeeeee;
+}
+
+.card,
+.card-header,
+.form-control,
+.btn-success,
+.btn-secondary {
+  border-radius: 0 !important;
+}
+
+.card {
+  border-color: #17a2b8;
+}
+
+.card-header {
+  background-color: #17a2b8;
+  color: #ffffff;
+}
+
+label {
+    color: #6c757d;
+    font-weight: 300;
+}
+
+.btn-success {
+    background-color: #17a2b8;
+    border-color: #17a2b8;
+}
+
+.btn-success:hover {
+    background-color: #138496 !important;
+    border-color: #138496 !important;
+}
+
+.btn-secondary:hover {
+    background-color: #ffffff;
+}
