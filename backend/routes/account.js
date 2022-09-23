@@ -1,8 +1,11 @@
 const router = require('express').Router();
 const {
-    check,
-    validationResult
+    check
 } = require('express-validator');
+
+const {
+    onRegister
+} = require('../services/account');
 
 // Register page
 router.post('/register', [
@@ -10,12 +13,10 @@ router.post('/register', [
     check('u_password').not().isEmpty(),
     check('u_firstname').not().isEmpty(),
     check('u_lastname').not().isEmpty(),
-], (req, res) => {
+], async (req, res) => {
     try {
         req.validate();
-        res.json({
-            message: req.body
-        })
+        res.json(onRegister(req.body))
     } catch (ex) {
         res.error(ex);
     }
